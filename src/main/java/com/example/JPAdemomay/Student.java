@@ -3,6 +3,7 @@ package com.example.JPAdemomay;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,4 +23,7 @@ public class Student {
     private String name;
 
     private int marks;
+
+    @OneToOne(mappedBy = "student")
+    private LibraryCard libraryCard;
 }
