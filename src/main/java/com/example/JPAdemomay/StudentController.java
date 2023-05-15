@@ -28,6 +28,12 @@ public class StudentController {
     public List<String> getAllByAgeMarks(@RequestParam int age,@RequestParam int marks){
         return studentService.getAllByAgeMarks(age,marks);
     }
+
+    @GetMapping("/get_by_age_greater_than")
+    public List<String> getAllByAgeGreaterThan(@RequestParam int age){
+        return studentService.getAllByAgeGreaterThan(age);
+    }
+
     @DeleteMapping("/delete")
     public String deleteStudent(@RequestParam int id){
         return studentService.deleteStudent(id);

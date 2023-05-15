@@ -48,4 +48,13 @@ public class StudentService {
         }
         return names;
     }
+
+    public List<String> getAllByAgeGreaterThan(int age) {
+        List<Student> students=studentRepository.getAllStudentGreaterThan(age);
+        List<String> names=new ArrayList<>();
+        for(Student student:students){
+            names.add(student.getName());
+        }
+        return names;
+    }
 }
