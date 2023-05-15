@@ -4,6 +4,8 @@ import org.hibernate.Remove;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/student")
 public class StudentController {
@@ -16,6 +18,15 @@ public class StudentController {
     @GetMapping("/get/{id}")
     public Student getStudentById(@PathVariable int id){
         return studentService.getStudentById(id);
+    }
+
+    @GetMapping("/get_by_age")
+    public List<String> getAllByAge(@RequestParam int age){
+        return studentService.getAllByAge(age);
+    }
+    @GetMapping("/get_by_age_marks")
+    public List<String> getAllByAgeMarks(@RequestParam int age,@RequestParam int marks){
+        return studentService.getAllByAgeMarks(age,marks);
     }
     @DeleteMapping("/delete")
     public String deleteStudent(@RequestParam int id){

@@ -7,9 +7,11 @@ import org.springframework.stereotype.Service;
 public class LibraryCardService {
     @Autowired
     LibraryCardRepository libraryCardRepository;
+    @Autowired
+    StudentRepository studentRepository;
 
-    public  String addCard(LibraryCard libraryCard){
-        libraryCardRepository.save(libraryCard);
-        return "LibraryCard Successfully added";
+    public  String addCard(LibraryCard libraryCard) {
+        return "SUCCESSFULL";
+
     }
 }
